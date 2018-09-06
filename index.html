@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="styles/style.css">
+        <title>MQTT Group Chat</title>
+        <script src="scripts/paho-mqtt-min.js"></script>
+    </head>
+    <body>
+        <h1>MQTT Group Chat</h1>
+
+        <div id="msg-view">
+            <!-- Put each individual message sent and received here -->
+        </div>
+
+        <!-- Text input field to type and send messages -->
+        <div id="msg-sender">
+            <textarea id="msg-text" type="text" placeholder="Type a message ..." autocomplete="off" autofocus disabled></textarea>
+            <!-- Send message button -->
+            <button id="send-btn"><span>Send </span></button>
+        </div>
+
+        <!-- Subscription/Publication Information -->
+        <div class="details" id="sub-topic">Subscribing to: </div>
+        <div class="details" id="pub-topic">Publishing to: </div>
+
+        <!-- Modal for configuring chat -->
+        
+        <!-- Trigger/Open the modal -->
+        <button id="config-btn" class="small-btn">Configure Chat</button>
+
+        <!-- Open the modal that shows who is currently online -->
+        <button id="online-btn" class="small-btn">See Who's Online</button>
+
+        <!-- Banner showing which group the user is connected to -->
+        <div id="group-name"></div>
+        
+        <!-- Online list modal -->
+        <div id="onlineModal" class="modal">
+            <!-- Online list modal content -->
+            <div id="online-list" class="modal-content">
+                <span id="onlineClose" class="close">&times;</span>
+                <h2 class="modal-title">Users Currently Active</h2>
+                <ul id="statusList">
+                    <!-- Add the names of everyone who is active on the chat here -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- Config modal -->
+        <div id="configModal" class="modal">
+            <!-- Config modal content -->
+            <div class="modal-content">
+                <span id="configClose" class="close">&times;</span>
+                <h2 class="modal-title">Chat Configuration</h2>
+                <b>Nickname:</b>
+                <input id="nick" type="text" autocomplete="off" />
+                <br/><b>Group Number:</b>
+                <select id="bus-lines">
+                    <option value="line1">Group 1</option>
+                    <option value="line2">Group 2</option>
+                    <option value="line3">Group 3</option>
+                </select>
+                <br/><button id="submit-config">Done</button>
+            </div>
+        </div>
+
+        <script type="module" src="scripts/script.js"></script>
+        <script type="module" src="scripts/MQTTChatView.js"></script>
+        <script type="module" src="scripts/MQTTChat.js"></script>
+    </body>
+</html>

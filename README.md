@@ -1,5 +1,5 @@
 # MQTT-Group-Chat
-A simple MQTT group chat application using the Paho MQTT JS library.  
+A simple ES6 MQTT group chat application using the Paho MQTT JS client library.  
 
 Uses the Eclpise Mosquitto public broker for testing.
 

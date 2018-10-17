@@ -2,3 +2,5 @@
 A simple MQTT group chat application using the Paho MQTT JS library.
 
 ![Screenshot](mqtt-screenshot.png)
+
+![Screenshot2](mqtt-users-screenshot.png)
